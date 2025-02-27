@@ -1,20 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Planners - Crawdwall</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/planners.css">
+    <title>Crawdwall - For Event Planners</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Plan and execute flawless events with Crawdwall's comprehensive project management and coordination tools for event planners.">
+    <meta name="keywords" content="event planners, event planning, project management, event coordination, planning tools">
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="src/styles/main.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
-            <a href="/" class="logo">
-                <img src="Crowdwal logo white logo.png" alt="Crawdwall Logo">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="src/assets/images/Crowdwal logo white logo.png" alt="Crawdwall Logo">
             </a>
             <div class="mobile-menu-btn">
                 <span></span>
@@ -22,232 +29,61 @@
                 <span></span>
             </div>
             <div class="nav-links">
-                <a href="index.html#features">Features</a>
-                <a href="index.html#events">Events</a>
-                <a href="index.html#testimonials">Testimonials</a>
-                <a href="index.html#contact">Contact</a>
+                <a href="organisers.html">Organisers</a>
+                <a href="planners.html" class="active">Planners</a>
+                <a href="vendors.html">Vendors</a>
+                <a href="attendees.html">Attendees</a>
                 <button class="btn btn-dark">Login</button>
-                <button class="btn btn-success">Get Started</button>
+                <button class="btn btn-primary">Get Started</button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero planner-hero updated-hero">
-        <div class="hero-content">
-            <h1>Effortless Event Planning Starts Here</h1>
-            <p class="hero-subtitle">Transform your event planning process with powerful tools and seamless management solutions</p>
-            <div class="cta-buttons">
-                <button class="btn btn-primary">Join the Waitlist</button>
-                <button class="btn btn-secondary">Learn More</button>
+    <section class="hero">
+        <div class="hero-background">
+            <img src="src/assets/images/Create event Dashboard. .png" alt="Event Planning Dashboard">
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Plan Events with Precision and Ease</h1>
+                <p>Access powerful project management tools and coordination features to deliver exceptional events</p>
+                <div class="hero-buttons">
+                    <a href="#get-started" class="btn btn-primary">Start Planning</a>
+                    <a href="#demo" class="btn btn-outline">Request Demo</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Crawdwall Section -->
-    <section class="features" id="features">
+    <!-- Features Section -->
+    <section class="features">
         <div class="container">
-            <h2>Why Choose Crawdwall for Planning?</h2>
-            <p>Experience the future of event planning with our AI-powered platform</p>
+            <div class="section-header">
+                <h2>Essential Tools for Event Planners</h2>
+                <p>Everything you need to plan and execute successful events</p>
+            </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <i class="fas fa-chart-pie"></i>
-                    <h3>Smart Budget Optimization</h3>
-                    <p>AI-driven budget alignment tools that optimize cost management and track expenses in real-time</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Project Management</h3>
+                    <p>Comprehensive task management, timelines, and collaboration tools</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-tasks"></i>
-                    <h3>Intelligent Timeline Planning</h3>
-                    <p>Smart timeline generation with automated task assignment and progress tracking</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Timeline Planning</h3>
+                    <p>Visual timeline tools with automated reminders and dependencies</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-cloud-sun"></i>
-                    <h3>Weather Intelligence</h3>
-                    <p>Advanced weather forecasting with automated contingency planning suggestions</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-handshake"></i>
-                    <h3>Vendor Management</h3>
-                    <p>Verified vendor marketplace with ratings, reviews, and streamlined booking system</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AI Solutions Section -->
-    <section class="ai-solutions" id="ai-solutions">
-        <div class="container">
-            <h2>AI-Driven Event Planning</h2>
-            <p class="section-subtitle">Harness the power of artificial intelligence to transform your event planning process</p>
-            
-            <div class="ai-solutions-grid">
-                <div class="ai-solution-item">
-                    <div class="ai-solution-content">
-                        <h3>Smart Budget & Timeline Management</h3>
-                        <p>Our AI optimizes your event's financial and temporal aspects for maximum efficiency.</p>
-                        <ul class="ai-features-list">
-                            <li>Real-time budget tracking and optimization</li>
-                            <li>Dynamic cost management suggestions</li>
-                            <li>Automated timeline generation</li>
-                            <li>Smart task assignment and tracking</li>
-                            <li>Progress monitoring and updates</li>
-                        </ul>
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
                     </div>
-                </div>
-                
-                <div class="ai-solution-item">
-                    <div class="ai-solution-content">
-                        <h3>Intelligent Vendor Management</h3>
-                        <p>Streamline your vendor relationships with our AI-powered marketplace.</p>
-                        <ul class="ai-features-list">
-                            <li>Verified vendor profiles with ratings</li>
-                            <li>Smart vendor matching based on your needs</li>
-                            <li>Automated booking and management</li>
-                            <li>Real-time communication platform</li>
-                            <li>Performance tracking and feedback</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="ai-solution-item">
-                    <div class="ai-solution-content">
-                        <h3>Risk Management & Contingency Planning</h3>
-                        <p>Let AI help you prepare for every scenario and minimize risks.</p>
-                        <ul class="ai-features-list">
-                            <li>Advanced weather forecasting</li>
-                            <li>Automated contingency plan generation</li>
-                            <li>Risk assessment and mitigation</li>
-                            <li>Real-time alerts and updates</li>
-                            <li>Alternative vendor recommendations</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Planning Process Section -->
-    <section class="planning-process" id="process">
-        <div class="container">
-            <h2>Your Event Planning Journey</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-number">1</div>
-                    <h3>Define Goals</h3>
-                    <p>Set clear objectives and success metrics</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-number">2</div>
-                    <h3>Budget Planning</h3>
-                    <p>Create and manage your event budget</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-number">3</div>
-                    <h3>Venue & Vendors</h3>
-                    <p>Book and coordinate all services</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-number">4</div>
-                    <h3>Execute & Monitor</h3>
-                    <p>Manage your event with real-time updates</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Dashboard Preview -->
-    <section class="dashboard-preview" id="dashboard">
-        <div class="container">
-            <h2>Your Command Center</h2>
-            <p>Experience the power of the Crawdwall Planner Dashboard</p>
-            <div class="dashboard-mockup">
-                <img src="Control Center.png" alt="Crawdwall Dashboard Preview" class="dashboard-img">
-                <div class="feature-highlights">
-                    <div class="highlight">Task Management</div>
-                    <div class="highlight">Budget Tracking</div>
-                    <div class="highlight">Team Communication</div>
-                    <div class="highlight">Resource Library</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Waitlist Section -->
-    <section class="waitlist" id="join">
-        <div class="container">
-            <h2>Join the Crawdwall Planner Waitlist</h2>
-            <p>Be among the first to experience the future of event planning</p>
-            <form id="waitlistForm" class="waitlist-form">
-                <div class="form-group">
-                    <input type="text" id="name" required placeholder="Full Name">
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" required placeholder="Email Address">
-                </div>
-                <div class="form-group">
-                    <select id="eventType" required>
-                        <option value="">Select Event Type</option>
-                        <option value="corporate">Corporate Events</option>
-                        <option value="weddings">Weddings</option>
-                        <option value="social">Social Events</option>
-                        <option value="conferences">Conferences</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <input type="text" id="company" placeholder="Company/Organization (Optional)">
-                </div>
-                <button type="submit" class="btn btn-primary">Join the Waitlist</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <h2>Success Stories</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="rating">★★★★★</div>
-                    <p>"Crawdwall transformed how I manage events. The automation features alone saved me countless hours."</p>
-                    <div class="testimonial-author">
-                        <img src="images/planner-1.jpg" alt="Sarah Johnson">
-                        <div>
-                            <h4>Sarah Johnson</h4>
-                            <p>Corporate Event Planner</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="rating">★★★★★</div>
-                    <p>"The vendor management system is a game-changer. Everything is organized and accessible in one place."</p>
-                    <div class="testimonial-author">
-                        <img src="images/planner-2.jpg" alt="Michael Chen">
-                        <div>
-                            <h4>Michael Chen</h4>
-                            <p>Wedding Planner</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq" id="faq">
-        <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question">How does Crawdwall help with event planning?</div>
-                    <div class="faq-answer">Crawdwall provides a comprehensive suite of tools including automated scheduling, budget management, vendor coordination, and team collaboration features.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">What types of events can I plan with Crawdwall?</div>
-                    <div class="faq-answer">Crawdwall is versatile and supports all types of events including corporate events, weddings, conferences, and social gatherings.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">How secure is my event data?</div>
-                    <div class="faq-answer">We implement industry-leading security measures to protect your data, including encryption and regular backups.</div>
+                    <h3>Vendor Coordination</h3>
+                    <p>Seamlessly coordinate with vendors and track deliverables</p>
                 </div>
             </div>
         </div>
@@ -258,39 +94,53 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h3>About Crawdwall</h3>
                     <ul>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#process">Planning Process</a></li>
-                        <li><a href="#join">Join Waitlist</a></li>
-                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Solutions</h3>
+                    <ul>
+                        <li><a href="organisers.html">Organisers</a></li>
+                        <li><a href="planners.html">Planners</a></li>
+                        <li><a href="vendors.html">Vendors</a></li>
+                        <li><a href="attendees.html">Attendees</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Connect With Us</h3>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p>Email: contact@crawdwall.com</p>
-                    <p>Phone: (555) 123-4567</p>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Crawdwall. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/planners.js"></script>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="src/js/main.js"></script>
 </body>
 </html>

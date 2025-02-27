@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Supabase Auth</title>
+    
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- Custom Scripts -->
+    <script type="module" src="src/js/supabase-config.js"></script>
+    <script type="module" src="src/js/test-auth.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-form {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-height: 100px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Supabase Auth Test</h1>
+    
+    <div class="test-form">
+        <h2>Sign Up Test</h2>
+        <form id="signup-test">
+            <div class="form-group">
+                <label for="signup-email">Email:</label>
+                <input type="email" id="signup-email" required>
+            </div>
+            <div class="form-group">
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" required>
+            </div>
+            <button type="submit">Test Sign Up</button>
+        </form>
+    </div>
+
+    <div class="test-form">
+        <h2>Sign In Test</h2>
+        <form id="signin-test">
+            <div class="form-group">
+                <label for="signin-email">Email:</label>
+                <input type="email" id="signin-email" required>
+            </div>
+            <div class="form-group">
+                <label for="signin-password">Password:</label>
+                <input type="password" id="signin-password" required>
+            </div>
+            <button type="submit">Test Sign In</button>
+        </form>
+    </div>
+
+    <div class="test-form">
+        <h2>Sign Out Test</h2>
+        <button id="signout-test">Test Sign Out</button>
+    </div>
+
+    <h2>Output:</h2>
+    <pre id="output">Waiting for tests...</pre>
+
+    <script type="module">
+        import { auth } from './src/js/supabase-config.js';
+
+        const output = document.getElementById('output');
+        
+        function log(message) {
+            output.textContent += '\n' + new Date().toISOString() + ': ' + message;
+        }
+
+        // Sign Up Test
+        document.getElementById('signup-test').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+
+            try {
+                const { data, error } = await auth.signUp(email, password, 'attendee');
+                if (error) throw error;
+                log('Sign up successful: ' + JSON.stringify(data));
+            } catch (error) {
+                log('Sign up error: ' + error.message);
+            }
+        });
+
+        // Sign In Test
+        document.getElementById('signin-test').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('signin-email').value;
+            const password = document.getElementById('signin-password').value;
+
+            try {
+                const { data, error } = await auth.signIn(email, password);
+                if (error) throw error;
+                log('Sign in successful: ' + JSON.stringify(data));
+            } catch (error) {
+                log('Sign in error: ' + error.message);
+            }
+        });
+
+        // Sign Out Test
+        document.getElementById('signout-test').addEventListener('click', async () => {
+            try {
+                const { error } = await auth.signOut();
+                if (error) throw error;
+                log('Sign out successful');
+            } catch (error) {
+                log('Sign out error: ' + error.message);
+            }
+        });
+
+        // Initial auth state check
+        auth.getSession().then(({ session, error }) => {
+            if (error) {
+                log('Session check error: ' + error.message);
+            } else {
+                log('Current session: ' + JSON.stringify(session));
+            }
+        });
+    </script>
+</body>
+</html>

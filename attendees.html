@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Attendees - Crawdwall</title>
+    <title>Attendees - Crawdwall</title>
+    <meta name="description" content="Discover and attend amazing events with Crawdwall. Find events that match your interests and connect with like-minded people.">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- CSS -->
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/mobile-menu.css">
     
     <!-- JavaScript -->
-    <script src="js/main.js" defer></script>
-    <script src="js/attendees.js" defer></script>
+    <script src="src/js/mobile-menu.js" defer></script>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
-            <a href="/" class="logo">
-                <img src="Crowdwal logo white logo.png" alt="Crawdwall Logo">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="src/assets/images/Crowdwal logo white logo.png" alt="Crawdwall Logo">
             </a>
             <div class="mobile-menu-btn">
                 <span></span>
@@ -29,229 +32,88 @@
                 <span></span>
             </div>
             <div class="nav-links">
-                <a href="index.html#features">Features</a>
-                <a href="index.html#events">Events</a>
-                <a href="index.html#testimonials">Testimonials</a>
-                <a href="index.html#contact">Contact</a>
-                <button class="btn btn-dark">Login</button>
-                <button class="btn btn-success">Get Started</button>
+                <a href="organisers.html">Organisers</a>
+                <a href="planners.html">Planners</a>
+                <a href="vendors.html">Vendors</a>
+                <a href="attendees.html" class="active">Attendees</a>
+                <a href="auth/attendee-auth.html?mode=signin" class="btn btn-dark">Login</a>
+                <a href="get-started.html" class="btn btn-primary">Get Started</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero attendee-hero">
-        <div class="hero-content">
-            <h1>Find Events. Make Connections. Travel with Ease.</h1>
-            <p class="hero-subtitle">Find and attend top-tier events effortlessly! Connect with event communities, enjoy AI-powered event recommendations, and get event-tailored transportation – all in one place.</p>
-            <div class="cta-buttons">
-                <button class="btn btn-primary">Explore Events</button>
-                <button class="btn btn-secondary">Join the Community</button>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Discover Amazing Events Near You</h1>
+                <p>Find and attend events that match your interests. From concerts to conferences, workshops to festivals - all in one place.</p>
+                <div class="hero-buttons">
+                    <a href="auth/attendee-auth.html" class="btn btn-primary">Join as Attendee</a>
+                    <a href="#how-it-works" class="btn btn-outline">Learn More</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="features" id="features">
+    <section id="how-it-works" class="features">
         <div class="container">
-            <h2>Why Attend Events with Crawdwall?</h2>
+            <h2>Why Choose Crawdwall?</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <i class="fas fa-robot"></i>
-                    <h3>AI-Powered Event Discovery</h3>
-                    <p>Get personalized event recommendations based on your interests and preferences</p>
+                    <i class="fas fa-compass"></i>
+                    <h3>Personalized Discovery</h3>
+                    <p>Get event recommendations based on your interests and preferences.</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-ticket"></i>
-                    <h3>Easy Registration & Ticketing</h3>
-                    <p>Secure your spot for events in just a few clicks with our seamless booking system</p>
+                    <i class="fas fa-ticket-alt"></i>
+                    <h3>Easy Booking</h3>
+                    <p>Book tickets seamlessly with secure payment options and instant confirmation.</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-comments"></i>
-                    <h3>Join Event Communities</h3>
-                    <p>Engage with like-minded attendees before, during, and after events</p>
+                    <i class="fas fa-bell"></i>
+                    <h3>Event Updates</h3>
+                    <p>Receive timely notifications about events you're interested in.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-car"></i>
-                    <h3>Event-Tailored Transportation</h3>
-                    <p>Get convenient ride options to and from your event with fellow attendees</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-calendar-check"></i>
-                    <h3>Seamless Event Management</h3>
-                    <p>Access event details, schedules, and live updates all in one place</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-star"></i>
-                    <h3>Exclusive Perks</h3>
-                    <p>Enjoy early-bird discounts, VIP access, and premium event experiences</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Event Categories -->
-    <section class="categories" id="categories">
-        <div class="container">
-            <h2>Explore Event Categories</h2>
-            <div class="categories-grid">
-                <div class="category-card">
-                    <i class="fas fa-microchip"></i>
-                    <h3>Tech & Innovation</h3>
-                    <p>Conferences and meetups for tech enthusiasts</p>
-                </div>
-                <div class="category-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Business & Finance</h3>
-                    <p>Summits and networking events for professionals</p>
-                </div>
-                <div class="category-card">
-                    <i class="fas fa-palette"></i>
-                    <h3>Creative & Entertainment</h3>
-                    <p>Shows and exhibitions for creative minds</p>
-                </div>
-                <div class="category-card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Educational & Workshops</h3>
-                    <p>Learning and skill-building sessions</p>
-                </div>
-                <div class="category-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Community & Networking</h3>
-                    <p>Social gatherings and community meetups</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="workflow" id="workflow">
-        <div class="container">
-            <h2>How It Works</h2>
-            <div class="workflow-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Sign Up</h3>
-                    <p>Create your profile and set your event interests</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Get Recommendations</h3>
-                    <p>Receive personalized event suggestions</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Book Tickets</h3>
-                    <p>Secure your spot with instant confirmation</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Join Community</h3>
-                    <p>Connect with fellow attendees</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">5</div>
-                    <h3>Book Transport</h3>
-                    <p>Arrange stress-free transportation</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">6</div>
-                    <h3>Attend & Network</h3>
-                    <p>Enjoy an unforgettable experience</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Community Features -->
-    <section class="community" id="community">
-        <div class="container">
-            <h2>Access to Event Communities</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-network-wired"></i>
-                    <h3>Network & Engage</h3>
-                    <p>Join event-specific chat groups to connect with attendees, speakers, and organizers</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-comments"></i>
-                    <h3>Pre-Event Discussions</h3>
-                    <p>Participate in Q&A sessions and get insights before the event</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-camera"></i>
-                    <h3>Post-Event Engagement</h3>
-                    <p>Share experiences, photos, and continue networking after the event</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Transportation Features -->
-    <section class="transportation" id="transportation">
-        <div class="container">
-            <h2>Event-Tailored Transportation</h2>
-            <div class="features-grid">
                 <div class="feature-card">
                     <i class="fas fa-users"></i>
-                    <h3>Shared Rides</h3>
-                    <p>Save costs by booking a ride with fellow event-goers</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Smart Pick-up Locations</h3>
-                    <p>Get AI-suggested meeting points for smooth coordination</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Safe & Reliable</h3>
-                    <p>Enjoy verified transport options for peace of mind</p>
+                    <h3>Community</h3>
+                    <p>Connect with like-minded attendees and share experiences.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials" id="testimonials">
+    <!-- Benefits Section -->
+    <section class="benefits">
         <div class="container">
-            <h2>What Attendees Are Saying</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="rating">★★★★★</div>
-                    <p>"Crawdwall made attending events effortless, from registration to transportation!"</p>
-                    <div class="testimonial-author">
-                        <img src="images/attendee-1.jpg" alt="Ade">
-                        <div>
-                            <h4>Ade Johnson</h4>
-                            <p>Startup Founder</p>
-                        </div>
-                    </div>
+            <div class="benefits-grid">
+                <div class="benefits-content">
+                    <h2>Benefits of Being an Attendee</h2>
+                    <ul class="benefits-list">
+                        <li><i class="fas fa-check"></i> Discover events tailored to your interests</li>
+                        <li><i class="fas fa-check"></i> Get early access to ticket sales</li>
+                        <li><i class="fas fa-check"></i> Exclusive discounts and offers</li>
+                        <li><i class="fas fa-check"></i> Easy ticket management and transfers</li>
+                        <li><i class="fas fa-check"></i> Connect with event organizers directly</li>
+                        <li><i class="fas fa-check"></i> Save favorite events and get reminders</li>
+                    </ul>
+                    <a href="auth/attendee-auth.html" class="btn btn-primary">Start Exploring Events</a>
                 </div>
-                <div class="testimonial-card">
-                    <div class="rating">★★★★★</div>
-                    <p>"I loved the event community feature. I made valuable connections before even stepping into the venue!"</p>
-                    <div class="testimonial-author">
-                        <img src="images/attendee-2.jpg" alt="Mary">
-                        <div>
-                            <h4>Mary Smith</h4>
-                            <p>Entrepreneur</p>
-                        </div>
-                    </div>
+                <div class="benefits-image">
+                    <img src="src/assets/images/stadium-4181150_1280.jpg" alt="Event Experience">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="cta">
         <div class="container">
-            <h2>Your Next Big Event is Just a Click Away!</h2>
-            <p>Join thousands of attendees discovering amazing events every day</p>
-            <div class="cta-buttons">
-                <button class="btn btn-primary">Explore Events Now</button>
-                <button class="btn btn-secondary">Join the Community</button>
-                <button class="btn btn-dark">Book a Ride</button>
-            </div>
+            <h2>Ready to Discover Amazing Events?</h2>
+            <p>Join thousands of attendees who find and enjoy great events through Crawdwall.</p>
+            <a href="auth/attendee-auth.html" class="btn btn-primary">Create Your Account</a>
         </div>
     </section>
 
@@ -260,34 +122,37 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
+                    <h3>About Crawdwall</h3>
+                    <p>Revolutionizing event management with AI-powered solutions for planners, vendors, and attendees.</p>
+                </div>
+                <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#categories">Categories</a></li>
-                        <li><a href="#workflow">How It Works</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="organisers.html">For Organisers</a></li>
+                        <li><a href="planners.html">For Planners</a></li>
+                        <li><a href="vendors.html">For Vendors</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Connect With Us</h3>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><a href="mailto:support@crawdwall.com">support@crawdwall.com</a></li>
+                        <li><a href="tel:+1234567890">+123 456 7890</a></li>
+                    </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p>Email: attendees@crawdwall.com</p>
-                    <p>Phone: (555) 123-4567</p>
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Crawdwall. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
             </div>
         </div>
     </footer>

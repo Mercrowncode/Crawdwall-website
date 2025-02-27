@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crawdwall - Revolutionizing Event Management</title>
+    <title>Crawdwall - Revolutionizing Event Management with AI</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Transform your events with Crawdwall's AI-powered event management platform. Smart budgeting, predictive analytics, and seamless automation.">
+    <meta name="keywords" content="AI event management, event planning, vendor marketplace, event automation, Africa events">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .navbar {
-            background-color: #fff;
-        }
-    </style>
-    
-    <!-- JavaScript -->
-    <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="src/styles/main.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
-            <a href="/" class="logo">
-                <img src="Crowdwal logo white logo.png" alt="Crawdwall Logo">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="src/assets/images/Crowdwal logo white logo.png" alt="Crawdwall Logo">
             </a>
             <div class="mobile-menu-btn">
                 <span></span>
@@ -31,12 +29,12 @@
                 <span></span>
             </div>
             <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#events">Events</a>
-                <a href="#testimonials">Testimonials</a>
-                <a href="#contact">Contact</a>
+                <a href="organisers.html">Organisers</a>
+                <a href="planners.html">Planners</a>
+                <a href="vendors.html">Vendors</a>
+                <a href="attendees.html">Attendees</a>
                 <button class="btn btn-dark">Login</button>
-                <button class="btn btn-success">Get Started</button>
+                <a href="get-started.html" class="btn btn-primary">Get Started</a>
             </div>
         </div>
     </nav>
@@ -44,151 +42,209 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-background">
-            <img src="stadium-4181150_1280.jpg" alt="Stadium Background">
+            <img src="src/assets/images/stadium-4181150_1280.jpg" alt="Event Background">
         </div>
-        <div class="hero-content">
-            <h1>Revolutionizing Event Management</h1>
-            <p>Transform your events into unforgettable experiences with our cutting-edge platform</p>
-            <div class="cta-buttons">
-                <button class="btn btn-success">Get Started</button>
-                <button class="btn btn-outline">Learn More</button>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Revolutionizing Event Management with AI</h1>
+                <p>Empowering planners, vendors, and attendees with cutting-edge automation and seamless event execution</p>
+                <div class="hero-buttons">
+                    <a href="get-started.html" class="btn btn-primary">Get Started</a>
+                    <a href="#learn-more" class="btn btn-outline">Learn More</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Introduction Section -->
-    <section class="intro">
-        <div class="container">
-            <h2>Welcome to Crawdwall</h2>
-            <p>Where event planning meets innovation. We provide a comprehensive platform that connects planners, organizers, vendors, and attendees in one seamless ecosystem.</p>
-        </div>
-    </section>
-
-    <!-- Core Features -->
+    <!-- Features Section -->
     <section id="features" class="features">
         <div class="container">
-            <h2>Core Features</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <i class="fas fa-user-tie"></i>
-                    <h3>For Event Planners</h3>
-                    <p>Streamline your planning process and delight your clients with our AI-powered tools.</p>
-                    <a href="planners.html" class="btn btn-primary">Learn More</a>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-calendar-check"></i>
-                    <h3>For Event Organizers</h3>
-                    <p>Manage events effortlessly with our comprehensive suite of organization tools.</p>
-                    <a href="organizers.html" class="btn btn-primary">Learn More</a>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-store"></i>
-                    <h3>For Event Vendors</h3>
-                    <p>Expand your reach and grow your business with AI-powered matching to the right events.</p>
-                    <a href="vendors.html" class="btn btn-primary">Learn More</a>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-ticket"></i>
-                    <h3>For Attendees</h3>
-                    <p>Discover and book amazing events that match your interests and preferences.</p>
-                    <a href="attendees.html" class="btn btn-primary">Learn More</a>
-                </div>
+            <div class="section-header">
+                <h2>Powerful Features for Modern Events</h2>
+                <p>Experience the future of event management with our comprehensive suite of AI-powered tools</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Events Section -->
-    <section id="events" class="events">
-        <div class="container">
-            <h2>Upcoming Events</h2>
-            <div class="event-carousel">
-                <div class="event-card">
-                    <img src="assets/event1.jpg" alt="Tech Conference 2025">
-                    <div class="event-details">
-                        <h3>Tech Conference 2025</h3>
-                        <p class="date">March 15-17, 2025</p>
-                        <button class="btn btn-success">Register Now</button>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users-gear"></i>
                     </div>
+                    <h3>For Organisers</h3>
+                    <p>Take control of your events with AI-powered tools for budgeting, analytics, and venue management</p>
                 </div>
-                <!-- More event cards will be dynamically added -->
-            </div>
-            <div class="text-center mt-4">
-                <a href="events.html" class="btn btn-primary">Find More Events</a>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>For Planners</h3>
+                    <p>Plan and execute flawless events with comprehensive project management and coordination tools</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3>For Vendors</h3>
+                    <p>Showcase your services and connect with organisers and planners to grow your business</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <h3>For Attendees</h3>
+                    <p>Discover amazing events, purchase tickets, and enjoy seamless event experiences</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
+    <!-- Success Metrics -->
+    <section class="metrics">
         <div class="container">
-            <h2>What Our Users Say</h2>
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <div class="metric-number" data-count="50">0</div>
+                    <p>Beta Testers</p>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number" data-count="10">0</div>
+                    <p>Event Partnerships</p>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number" data-count="100">0</div>
+                    <p>Events Streamlined</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How Crawdwall Works</h2>
+                <p>Simple steps to transform your event management experience</p>
+            </div>
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Sign Up & Choose Your Role</h3>
+                    <p>Register as an Organiser, Planner, Vendor, or Attendee to access tailored features</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Connect & Collaborate</h3>
+                    <p>Organisers and planners find vendors, vendors showcase services, and attendees discover events</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Manage & Experience</h3>
+                    <p>Use our AI-powered platform to create, plan, manage, or attend successful events</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Users Say</h2>
+                <p>Hear from event organizers who have transformed their events with Crawdwall</p>
+            </div>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
-                    <div class="rating">★★★★★</div>
-                    <p>"Crawdwall transformed how we manage our corporate events. Highly recommended!"</p>
-                    <div class="author">
-                        <img src="assets/testimonial1.jpg" alt="Sarah Johnson">
+                    <div class="testimonial-content">
+                        <p>"Crawdwall's AI features have revolutionized how we plan and execute our events. The automation saves us countless hours."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="src/assets/images/Event Organizer.jpg" alt="Sarah Johnson">
                         <div>
                             <h4>Sarah Johnson</h4>
-                            <p>Event Director, TechCorp</p>
+                            <p>Event Director</p>
                         </div>
                     </div>
                 </div>
-                <!-- More testimonial cards will be added -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The vendor marketplace made it incredibly easy to find and connect with the right service providers for our conference."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="src/assets/images/Event Card.png" alt="Michael Chen">
+                        <div>
+                            <h4>Michael Chen</h4>
+                            <p>Conference Organizer</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="cta">
         <div class="container">
-            <h2>Ready to Transform Your Events?</h2>
-            <p>Join thousands of successful event organizers on Crawdwall</p>
-            <div class="cta-buttons">
-                <button class="btn btn-success">Sign Up Now</button>
-                <button class="btn btn-dark">Book a Demo</button>
+            <div class="cta-content">
+                <h2>Join Crawdwall Today & Transform Your Events!</h2>
+                <p>Start using our AI-powered platform to streamline your event management process</p>
+                <div class="cta-buttons">
+                    <a href="#signup" class="btn btn-dark">Sign Up for Free</a>
+                    <a href="#demo" class="btn btn-outline">Schedule a Demo</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <img src="Crowdwal logo white logo.png" alt="Crawdwall Logo" class="footer-logo">
-                    <p>Revolutionizing the future of event management</p>
+                    <h3>About Crawdwall</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <a href="#features">Features</a>
-                    <a href="#events">Events</a>
-                    <a href="#testimonials">Testimonials</a>
-                    <a href="#contact">Contact</a>
+                    <h3>Solutions</h3>
+                    <ul>
+                        <li><a href="organisers.html">Organisers</a></li>
+                        <li><a href="planners.html">Planners</a></li>
+                        <li><a href="vendors.html">Vendors</a></li>
+                        <li><a href="attendees.html">Attendees</a></li>
+                    </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Connect With Us</h4>
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Email: info@crawdwall.com</p>
-                    <p>Phone: (555) 123-4567</p>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Crawdwall. All rights reserved.</p>
-                <div class="legal-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="src/js/main.js"></script>
 </body>
 </html>
