@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event - Crawdwall</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../src/styles/colors.css">
+    <link rel="stylesheet" href="../src/styles/sidebar.css">
+    <link rel="stylesheet" href="../src/styles/create-event.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Sidebar (Same as dashboard) -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Copy sidebar content from organizer-dashboard.html -->
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="content-header">
+                <div class="header-left">
+                    <h1>Create New Event</h1>
+                    <p>Fill in the details to create your event</p>
+                </div>
+                <div class="header-right">
+                    <button class="preview-btn">
+                        <i class="fas fa-eye"></i>
+                        Preview
+                    </button>
+                    <button class="publish-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Publish Event
+                    </button>
+                </div>
+            </header>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-steps">
+                    <div class="step active" data-step="1">
+                        <div class="step-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <span>Event Details</span>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-icon">
+                            <i class="fas fa-ticket-alt"></i>
+                        </div>
+                        <span>Ticketing</span>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <span>WhatsApp Setup</span>
+                    </div>
+                    <div class="step" data-step="4">
+                        <div class="step-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <span>Payment Setup</span>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 25%"></div>
+                </div>
+            </div>
+
+            <!-- Form Container -->
+            <div class="form-container">
+                <form id="eventDetailsForm" class="step-form active">
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label for="eventName">Event Name*</label>
+                            <input type="text" id="eventName" required placeholder="Enter a clear and concise name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="eventDescription">Event Description</label>
+                            <textarea id="eventDescription" rows="4" placeholder="Describe your event..."></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Event Type</label>
+                                <div class="toggle-group">
+                                    <button type="button" class="toggle-btn active">Physical</button>
+                                    <button type="button" class="toggle-btn">Virtual</button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="eventCategory">Event Category</label>
+                                <select id="eventCategory">
+                                    <option value="">Select Category</option>
+                                    <option value="business">Business</option>
+                                    <option value="tech">Technology</option>
+                                    <option value="music">Music</option>
+                                    <option value="arts">Arts & Culture</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="startDate">Start Date & Time</label>
+                                <input type="datetime-local" id="startDate">
+                            </div>
+                            <div class="form-group">
+                                <label for="endDate">End Date & Time</label>
+                                <input type="datetime-local" id="endDate">
+                            </div>
+                        </div>
+
+                        <div class="form-group location-group">
+                            <label for="eventLocation">Event Location</label>
+                            <div class="location-input">
+                                <input type="text" id="eventLocation" placeholder="Search for a location">
+                                <button type="button" class="map-btn">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </button>
+                            </div>
+                            <div id="map" class="location-map"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Event Banner</label>
+                            <div class="image-upload">
+                                <input type="file" id="eventBanner" accept="image/*">
+                                <div class="upload-area">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>Drag & Drop or Click to Upload</p>
+                                    <span>Recommended size: 1200x630px</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="secondary-btn" id="saveDraft">
+                            <i class="fas fa-save"></i>
+                            Save Draft
+                        </button>
+                        <a href="create-event-tickets.html" class="primary-btn">
+                            Continue to Ticketing
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
+            <!-- Add this after the first form in the form-container div -->
+            <form id="ticketingForm" class="step-form">
+                <div class="form-section">
+                    <div class="form-group">
+                        <label>Ticket Type</label>
+                        <div class="toggle-group">
+                            <button type="button" class="toggle-btn active" data-type="free">Free</button>
+                            <button type="button" class="toggle-btn" data-type="paid">Paid</button>
+                        </div>
+                    </div>
+
+                    <div class="ticket-price-section" style="display: none;">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ticketPrice">Ticket Price*</label>
+                                <div class="price-input">
+                                    <span class="currency">₦</span>
+                                    <input type="number" id="ticketPrice" placeholder="0.00" min="0" step="0.01">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="enableEarlyBird">
+                                    Enable Early Bird Pricing
+                                </label>
+                                <div class="early-bird-section" style="display: none;">
+                                    <div class="price-input">
+                                        <span class="currency">₦</span>
+                                        <input type="number" id="earlyBirdPrice" placeholder="Early bird price" min="0" step="0.01">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="totalTickets">Total Available Tickets*</label>
+                            <input type="number" id="totalTickets" required min="1" placeholder="Enter total number of tickets">
+                        </div>
+                        <div class="form-group">
+                            <label for="maxPerBuyer">Maximum Tickets per Buyer</label>
+                            <input type="number" id="maxPerBuyer" min="1" placeholder="Leave blank for no limit">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="salesStartDate">Sales Start Date & Time*</label>
+                            <input type="datetime-local" id="salesStartDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="salesEndDate">Sales End Date & Time*</label>
+                            <input type="datetime-local" id="salesEndDate" required>
+                        </div>
+                    </div>
+
+                    <div class="ticket-summary">
+                        <h3>Ticket Summary</h3>
+                        <div class="summary-grid">
+                            <div class="summary-item">
+                                <span>Ticket Type:</span>
+                                <strong id="summaryType">Free</strong>
+                            </div>
+                            <div class="summary-item price-summary" style="display: none;">
+                                <span>Price:</span>
+                                <strong id="summaryPrice">₦0.00</strong>
+                            </div>
+                            <div class="summary-item">
+                                <span>Available Tickets:</span>
+                                <strong id="summaryTotal">0</strong>
+                            </div>
+                            <div class="summary-item">
+                                <span>Sales Period:</span>
+                                <strong id="summarySales">Not set</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="secondary-btn prev-step">Previous: Event Details</button>
+                    <button type="button" class="primary-btn next-step">Next: WhatsApp Setup</button>
+                </div>
+            </form>
+            <!-- Additional forms for other steps will be added here -->
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../src/js/sidebar.js"></script>
+    <script src="../src/js/create-event.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+</body>
+</html>

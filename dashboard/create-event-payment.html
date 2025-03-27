@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Setup - Crawdwall</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../src/styles/colors.css">
+    <link rel="stylesheet" href="../src/styles/sidebar.css">
+    <link rel="stylesheet" href="../src/styles/payment-setup.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Copy sidebar content -->
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <h1>Payment Setup</h1>
+                    <p>Configure your payment and payout settings</p>
+                </div>
+                <div class="header-right">
+                    <button class="save-btn">
+                        <i class="fas fa-save"></i>
+                        Save Settings
+                    </button>
+                </div>
+            </header>
+
+            <div class="payment-setup-container">
+                <!-- Payment Gateway Section -->
+                <section class="setup-section">
+                    <h2>Payment Gateway</h2>
+                    <div class="gateway-options">
+                        <div class="gateway-card" data-gateway="paystack">
+                            <img src="../src/assets/images/paystack-logo.png" alt="Paystack">
+                            <div class="gateway-status">
+                                <span class="status-badge connected">Connected</span>
+                                <button class="disconnect-btn">Disconnect</button>
+                            </div>
+                        </div>
+                        <div class="gateway-card" data-gateway="flutterwave">
+                            <img src="../src/assets/images/flutterwave-logo.png" alt="Flutterwave">
+                            <div class="gateway-status">
+                                <span class="status-badge">Not Connected</span>
+                                <button class="connect-btn">Connect</button>
+                            </div>
+                        </div>
+                        <div class="gateway-card" data-gateway="stripe">
+                            <img src="../src/assets/images/stripe-logo.png" alt="Stripe">
+                            <div class="gateway-status">
+                                <span class="status-badge">Not Connected</span>
+                                <button class="connect-btn">Connect</button>
+                            </div>
+                        </div>
+                        <div class="gateway-card" data-gateway="mobile-money">
+                            <img src="../src/assets/images/mobile-money-logo.png" alt="Mobile Money">
+                            <div class="gateway-status">
+                                <span class="status-badge">Not Connected</span>
+                                <button class="connect-btn">Connect</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Payout Setup Section -->
+                <section class="setup-section">
+                    <h2>Payout Account</h2>
+                    <div class="payout-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="bankName">Bank Name</label>
+                                <select id="bankName" required>
+                                    <option value="">Select Bank</option>
+                                    <option value="gtb">Guaranty Trust Bank</option>
+                                    <option value="firstbank">First Bank</option>
+                                    <option value="zenith">Zenith Bank</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="accountNumber">Account Number</label>
+                                <input type="text" id="accountNumber" maxlength="10" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="accountName">Account Name</label>
+                            <input type="text" id="accountName" readonly>
+                            <button class="verify-btn" id="verifyAccount">
+                                <i class="fas fa-sync-alt"></i>
+                                Verify Account
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Platform Fees Section -->
+                <section class="setup-section">
+                    <h2>Platform Fees & Revenue</h2>
+                    <div class="fees-container">
+                        <div class="fee-info">
+                            <div class="fee-badge">
+                                <i class="fas fa-percentage"></i>
+                                <span>5%</span>
+                            </div>
+                            <p>Platform fee per ticket sale</p>
+                        </div>
+                        
+                        <div class="revenue-calculator">
+                            <h3>Revenue Calculator</h3>
+                            <div class="calculator-form">
+                                <div class="form-group">
+                                    <label for="ticketPrice">Ticket Price (₦)</label>
+                                    <input type="number" id="ticketPrice" value="1000">
+                                </div>
+                                <div class="form-group">
+                                    <label for="ticketQuantity">Number of Tickets</label>
+                                    <input type="number" id="ticketQuantity" value="100">
+                                </div>
+                            </div>
+                            <div class="calculation-results">
+                                <div class="result-item">
+                                    <span>Gross Revenue:</span>
+                                    <strong id="grossRevenue">₦100,000</strong>
+                                </div>
+                                <div class="result-item">
+                                    <span>Platform Fee (5%):</span>
+                                    <strong id="platformFee">₦5,000</strong>
+                                </div>
+                                <div class="result-item total">
+                                    <span>Net Revenue:</span>
+                                    <strong id="netRevenue">₦95,000</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Navigation Buttons -->
+                <div class="form-actions">
+                    <a href="create-event-whatsapp.html" class="secondary-btn">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to WhatsApp Setup
+                    </a>
+                    <a href="event-preview.html" class="primary-btn">
+                        Review & Publish
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../src/js/sidebar.js"></script>
+    <script src="../src/js/payment-setup.js"></script>
+</body>
+</html>

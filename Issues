@@ -1,0 +1,20 @@
+ ..Issues to Resolve.. 
+
+
+Signup\Signup Toggle for 
+ Vendor-auth 
+ Planner-auth. 
+ 
+ 2. Properly Connecting 
+ Vendor=auth
+ planner-auth
+ Organiser-auth 
+
+  to supabase and make sure all Logins are successful.
+
+3. Create the event listing page and add a couple of events
+- Create form for Volunteer Certificate Program, and add the form link to the listing page for easy access. 
+- Add Volunteer Certificate  Program to the eventlisting page. 
+
+4. Create the Attendee Dashbaord and make it Functional. 
+  

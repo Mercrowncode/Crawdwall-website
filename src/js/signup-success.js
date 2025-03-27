@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Redirect to appropriate dashboard
                 switch(role) {
                     case 'organiser':
-                        window.location.href = '/organiser-dashboard';
+                        window.location.href = '/organizer-dashboard.html';
                         break;
                     case 'vendor':
                         window.location.href = '/vendor-dashboard';
@@ -42,9 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Auto-redirect after 3 seconds
+    // Redirect to dashboard after 3 seconds
     setTimeout(() => {
-        if (dashboardBtn) {
-            dashboardBtn.click();
-        }
+        window.location.href = '../dashboard/organizer-dashboard.html';
     }, 3000);
 });

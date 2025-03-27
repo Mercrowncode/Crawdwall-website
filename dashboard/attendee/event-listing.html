@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listing - Crawdwall</title>
+    <link rel="stylesheet" href="../../src/css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .hero {
+            background-image: url('../../src/assets/images/hero-background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../../src/assets/images/Crowdwal logo white logo.png" alt="Crawdwall Logo">
+            </a>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeSidebar">&times;</button>
+        <ul>
+            <li><a href="#profile"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="#communities"><i class="fas fa-users"></i> Communities</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="hero">
+            <div class="container">
+                <h1>Discover Exciting Events</h1>
+                <div class="filters">
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="tech">Tech</option>
+                        <option value="business">Business</option>
+                        <option value="finance">Finance</option>
+                        <option value="education">Education</option>
+                    </select>
+                    <input type="date" id="date-filter">
+                    <input type="text" id="location-filter" placeholder="Location">
+                    <select id="popularity-filter">
+                        <option value="">Sort by Popularity</option>
+                        <option value="most-popular">Most Popular</option>
+                        <option value="least-popular">Least Popular</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <div class="container event-list">
+                <!-- Event items will be dynamically loaded here -->
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <h3>About Crawdwall</h3>
+                        <p>Your one-stop platform for event planning and management.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../about.html">About Us</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact Us</h3>
+                        <p>Email: info@crawdwall.com</p>
+                        <p>Phone: +1 234 567 8900</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../../src/js/event-listing.js"></script>
+</body>
+</html>

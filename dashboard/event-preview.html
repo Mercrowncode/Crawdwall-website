@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review & Publish - Crawdwall</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../src/styles/colors.css">
+    <link rel="stylesheet" href="../src/styles/sidebar.css">
+    <link rel="stylesheet" href="../src/styles/event-preview.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Copy sidebar content -->
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <h1>Review & Publish</h1>
+                    <p>Review your event details before publishing</p>
+                </div>
+                <div class="header-right">
+                    <button class="edit-btn">
+                        <i class="fas fa-pencil"></i>
+                        Edit Event
+                    </button>
+                    <button class="publish-btn">
+                        <i class="fas fa-globe"></i>
+                        Publish Event
+                    </button>
+                </div>
+            </header>
+
+            <div class="preview-container">
+                <!-- Event Preview -->
+                <section class="preview-section event-preview">
+                    <div class="preview-banner">
+                        <img src="../src/assets/images/event-banner.jpg" alt="Event Banner">
+                    </div>
+                    <div class="preview-content">
+                        <div class="event-header">
+                            <h2 id="eventName">Tech Conference 2024</h2>
+                            <span class="event-type">Physical Event</span>
+                        </div>
+                        <div class="event-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-calendar"></i>
+                                <span id="eventDate">March 15, 2024</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span id="eventTime">10:00 AM - 4:00 PM</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span id="eventLocation">Tech Hub, Lagos</span>
+                            </div>
+                        </div>
+                        <div class="event-description">
+                            <p id="eventDescription">Join us for an exciting day of technology insights, networking, and innovation...</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Ticket Preview -->
+                <section class="preview-section ticket-preview">
+                    <h3>Ticket Information</h3>
+                    <div class="ticket-list">
+                        <div class="ticket-item">
+                            <div class="ticket-details">
+                                <h4>Regular Ticket</h4>
+                                <p>Access to all conference sessions and workshops</p>
+                            </div>
+                            <div class="ticket-price">
+                                <strong>₦5,000</strong>
+                                <span>100 available</span>
+                            </div>
+                        </div>
+                        <div class="ticket-item early-bird">
+                            <div class="ticket-badge">Early Bird</div>
+                            <div class="ticket-details">
+                                <h4>Early Bird Ticket</h4>
+                                <p>Limited early bird tickets with special pricing</p>
+                            </div>
+                            <div class="ticket-price">
+                                <strong>₦3,500</strong>
+                                <span>50 available</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Payment Preview -->
+                <section class="preview-section payment-preview">
+                    <h3>Payment Settings</h3>
+                    <div class="payment-details">
+                        <div class="payment-item">
+                            <span>Payment Gateway:</span>
+                            <strong>Paystack</strong>
+                        </div>
+                        <div class="payment-item">
+                            <span>Payout Account:</span>
+                            <strong>GT Bank (**** 1234)</strong>
+                        </div>
+                        <div class="payment-item">
+                            <span>Platform Fee:</span>
+                            <strong>5% per ticket</strong>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- WhatsApp Preview -->
+                <section class="preview-section whatsapp-preview">
+                    <h3>WhatsApp Integration</h3>
+                    <div class="whatsapp-details">
+                        <div class="whatsapp-message">
+                            <h4>Automated Response</h4>
+                            <div class="message-bubble">
+                                <p>Hello! Thank you for your interest in Tech Conference 2024. Here's your ticket purchase link: [Auto-Generated Link]</p>
+                            </div>
+                        </div>
+                        <div class="whatsapp-qr">
+                            <img src="../src/assets/images/whatsapp-qr.png" alt="WhatsApp QR Code">
+                            <span>Scan to purchase tickets</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Action Buttons -->
+                <div class="preview-actions">
+                    <button class="secondary-btn" id="saveDraft">
+                        <i class="fas fa-save"></i>
+                        Save as Draft
+                    </button>
+                    <button class="primary-btn" id="publishEvent">
+                        <i class="fas fa-globe"></i>
+                        Publish Event
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Publish Confirmation Modal -->
+    <div class="modal" id="publishModal">
+        <div class="modal-content">
+            <h3>Ready to Publish?</h3>
+            <p>Your event will be visible to the public after publishing.</p>
+            <div class="modal-actions">
+                <button class="secondary-btn" id="cancelPublish">Cancel</button>
+                <button class="primary-btn" id="confirmPublish">Yes, Publish Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../src/js/sidebar.js"></script>
+    <script src="../src/js/event-preview.js"></script>
+</body>
+</html>

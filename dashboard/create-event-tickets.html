@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event: Ticketing - Crawdwall</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../src/styles/colors.css">
+    <link rel="stylesheet" href="../src/styles/sidebar.css">
+    <link rel="stylesheet" href="../src/styles/create-event.css">
+    <link rel="stylesheet" href="../src/styles/ticketing.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Sidebar (Same as dashboard) -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Copy sidebar content from organizer-dashboard.html -->
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="content-header">
+                <div class="header-left">
+                    <h1>Event Ticketing</h1>
+                    <p>Set up your ticket types and pricing</p>
+                </div>
+                <div class="header-right">
+                    <button class="preview-btn">
+                        <i class="fas fa-eye"></i>
+                        Preview
+                    </button>
+                    <button class="save-btn">
+                        <i class="fas fa-save"></i>
+                        Save & Continue
+                    </button>
+                </div>
+            </header>
+
+            <!-- Progress Steps -->
+            <div class="progress-container">
+                <!-- Same progress bar as create-event.html but with step 2 active -->
+            </div>
+
+            <!-- Ticketing Form -->
+            <div class="ticketing-container">
+                <!-- Ticket Types Section -->
+                <section class="ticket-types">
+                    <div class="section-header">
+                        <h2>Ticket Types</h2>
+                        <button class="add-ticket-btn">
+                            <i class="fas fa-plus"></i>
+                            Add Ticket Type
+                        </button>
+                    </div>
+
+                    <div class="ticket-list">
+                        <!-- Regular Ticket -->
+                        <div class="ticket-card">
+                            <div class="ticket-header">
+                                <input type="text" class="ticket-name" value="Regular Ticket" placeholder="Ticket Name">
+                                <div class="ticket-actions">
+                                    <button class="duplicate-btn"><i class="fas fa-copy"></i></button>
+                                    <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="ticket-details">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Ticket Type</label>
+                                        <div class="toggle-group">
+                                            <button type="button" class="toggle-btn active" data-type="paid">Paid</button>
+                                            <button type="button" class="toggle-btn" data-type="free">Free</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="price">Price</label>
+                                        <div class="price-input">
+                                            <span class="currency">₦</span>
+                                            <input type="number" id="price" placeholder="0.00" min="0">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="quantity">Available Quantity</label>
+                                        <input type="number" id="quantity" placeholder="Enter quantity" min="1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="maxPerBuyer">Max Tickets Per Buyer</label>
+                                        <input type="number" id="maxPerBuyer" placeholder="Optional limit">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="enableEarlyBird">
+                                        Enable Early Bird Pricing
+                                    </label>
+                                    <div class="early-bird-options" style="display: none;">
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label>Early Bird Price</label>
+                                                <div class="price-input">
+                                                    <span class="currency">₦</span>
+                                                    <input type="number" placeholder="Early bird price">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Early Bird Quantity</label>
+                                                <input type="number" placeholder="Number of early bird tickets">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Sales Start</label>
+                                        <input type="datetime-local">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Sales End</label>
+                                        <input type="datetime-local">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea placeholder="Describe what's included with this ticket"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Summary Section -->
+                <section class="ticket-summary">
+                    <h2>Ticket Summary</h2>
+                    <div class="summary-content">
+                        <div class="summary-item">
+                            <span>Total Ticket Types:</span>
+                            <strong>1</strong>
+                        </div>
+                        <div class="summary-item">
+                            <span>Total Capacity:</span>
+                            <strong>0</strong>
+                        </div>
+                        <div class="summary-item">
+                            <span>Price Range:</span>
+                            <strong>₦0 - ₦0</strong>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Navigation Buttons -->
+                <div class="form-actions">
+                    <a href="create-event.html" class="secondary-btn">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Event Details
+                    </a>
+                    <a href="create-event-whatsapp.html" class="primary-btn">
+                        Continue to WhatsApp Setup
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../src/js/sidebar.js"></script>
+    <script src="../src/js/ticketing.js"></script>
+</body>
+</html>

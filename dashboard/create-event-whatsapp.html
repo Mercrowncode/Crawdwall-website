@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Setup - Crawdwall</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../src/styles/colors.css">
+    <link rel="stylesheet" href="../src/styles/sidebar.css">
+    <link rel="stylesheet" href="../src/styles/whatsapp-setup.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Copy sidebar content -->
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <h1>WhatsApp Integration</h1>
+                    <p>Configure your WhatsApp ticketing settings</p>
+                </div>
+                <div class="header-right">
+                    <button class="preview-btn">
+                        <i class="fas fa-eye"></i>
+                        Preview
+                    </button>
+                    <button class="save-btn">
+                        <i class="fas fa-save"></i>
+                        Save Settings
+                    </button>
+                </div>
+            </header>
+
+            <div class="whatsapp-setup-container">
+                <!-- WhatsApp Link Section -->
+                <section class="setup-section">
+                    <h2>WhatsApp Purchase Link</h2>
+                    <div class="link-container">
+                        <div class="generated-link">
+                            <input type="text" id="whatsappLink" value="https://wa.me/1234567890?text=I%20want%20to%20buy%20tickets" readonly>
+                            <button class="copy-btn" id="copyLink">
+                                <i class="fas fa-copy"></i>
+                                Copy
+                            </button>
+                        </div>
+                        <div class="qr-code">
+                            <img src="../src/assets/images/qr-placeholder.png" alt="QR Code">
+                            <button class="download-qr">
+                                <i class="fas fa-download"></i>
+                                Download QR
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Bot Response Section -->
+                <section class="setup-section">
+                    <h2>Automated Bot Responses</h2>
+                    <div class="message-editor">
+                        <div class="editor-toolbar">
+                            <button class="toolbar-btn" data-variable="event-name">[Event Name]</button>
+                            <button class="toolbar-btn" data-variable="ticket-link">[Ticket Link]</button>
+                            <button class="toolbar-btn" data-variable="event-date">[Event Date]</button>
+                            <button class="toolbar-btn" data-variable="ticket-price">[Ticket Price]</button>
+                        </div>
+                        <div class="form-group">
+                            <label>Initial Response</label>
+                            <textarea id="initialResponse" rows="4">Hello! Thank you for your interest in [Event Name]. Here's your ticket purchase link: [Ticket Link]</textarea>
+                        </div>
+                        <div class="message-preview">
+                            <h4>Preview</h4>
+                            <div class="whatsapp-preview">
+                                <div class="preview-message" id="initialPreview"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Thank You Message Section -->
+                <section class="setup-section">
+                    <h2>Purchase Confirmation Message</h2>
+                    <div class="message-editor">
+                        <div class="editor-toolbar">
+                            <button class="toolbar-btn" data-variable="buyer-name">[Buyer Name]</button>
+                            <button class="toolbar-btn" data-variable="event-name">[Event Name]</button>
+                            <button class="toolbar-btn" data-variable="ticket-qty">[Ticket Quantity]</button>
+                            <button class="toolbar-btn" data-variable="event-date">[Event Date]</button>
+                        </div>
+                        <div class="form-group">
+                            <label>Thank You Message</label>
+                            <textarea id="thankYouMessage" rows="4">Thank you [Buyer Name] for purchasing tickets to [Event Name]! We can't wait to see you on [Event Date]!</textarea>
+                        </div>
+                        <div class="message-preview">
+                            <h4>Preview</h4>
+                            <div class="whatsapp-preview">
+                                <div class="preview-message" id="thankYouPreview"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Navigation Buttons -->
+                <div class="form-actions">
+                    <a href="create-event-tickets.html" class="secondary-btn">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Ticketing
+                    </a>
+                    <a href="create-event-payment.html" class="primary-btn">
+                        Continue to Payment Setup
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../src/js/sidebar.js"></script>
+    <script src="../src/js/whatsapp-setup.js"></script>
+</body>
+</html>

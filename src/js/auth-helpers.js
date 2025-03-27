@@ -108,132 +108,76 @@ export const authHelpers = {
         }
     },
 
-    // Planner signup and profile creation
-    async signUpPlanner(email, password, profileData) {
-        try {
-            const { data: authData, error: authError } = await supabase.auth.signUp({
-                email,
-                password,
-                options: {
-                    data: {
-                        role: 'planner'
-                    }
-                }
-            });
-            
-            if (authError) throw authError;
-
-            const { error: profileError } = await supabase
-                .from('planner_profiles')
-                .upsert({
-                    user_id: authData.user.id,
-                    full_name: profileData.fullName,
-                    company_name: profileData.companyName,
-                    experience_years: profileData.experienceYears,
-                    specializations: profileData.specializations,
-                    phone: profileData.phone,
-                    portfolio_url: profileData.portfolioUrl,
-                    certifications: profileData.certifications
-                });
-
-            if (profileError) throw profileError;
-            return { data: authData, error: null };
-        } catch (error) {
-            return { data: null, error };
-        }
-    },
-
-    // Get user profile based on role
-    async getUserProfile() {
+    // Get organizer profile
+    async getOrganizerProfile() {
         try {
             const { data: { user }, error: userError } = await supabase.auth.getUser();
             if (userError) throw userError;
 
-            const role = user.user_metadata.role;
-            let profile;
+            const { data, error } = await supabase
+                .from('organiser_profiles')
+                .select('*')
+                .eq('user_id', user.id)
+                .single();
 
-            switch (role) {
-                case 'attendee':
-                    profile = await supabase
-                        .from('attendee_profiles')
-                        .select('*')
-                        .eq('user_id', user.id)
-                        .single();
-                    break;
-                case 'vendor':
-                    profile = await supabase
-                        .from('vendor_profiles')
-                        .select('*')
-                        .eq('user_id', user.id)
-                        .single();
-                    break;
-                case 'organiser':
-                    profile = await supabase
-                        .from('organiser_profiles')
-                        .select('*')
-                        .eq('user_id', user.id)
-                        .single();
-                    break;
-                case 'planner':
-                    profile = await supabase
-                        .from('planner_profiles')
-                        .select('*')
-                        .eq('user_id', user.id)
-                        .single();
-                    break;
-                default:
-                    throw new Error('Invalid user role');
-            }
-
-            if (profile.error) throw profile.error;
-            return { profile: profile.data, error: null };
+            if (error) throw error;
+            return { profile: data, error: null };
         } catch (error) {
             return { profile: null, error };
         }
     },
 
-    // Update user profile based on role
-    async updateProfile(profileData) {
+    // Update organizer profile
+    async updateOrganizerProfile(profileData) {
         try {
             const { data: { user }, error: userError } = await supabase.auth.getUser();
             if (userError) throw userError;
 
-            const role = user.user_metadata.role;
-            let updateResult;
+            const { data, error } = await supabase
+                .from('organiser_profiles')
+                .update(profileData)
+                .eq('user_id', user.id);
 
-            switch (role) {
-                case 'attendee':
-                    updateResult = await supabase
-                        .from('attendee_profiles')
-                        .update(profileData)
-                        .eq('user_id', user.id);
-                    break;
-                case 'vendor':
-                    updateResult = await supabase
-                        .from('vendor_profiles')
-                        .update(profileData)
-                        .eq('user_id', user.id);
-                    break;
-                case 'organiser':
-                    updateResult = await supabase
-                        .from('organiser_profiles')
-                        .update(profileData)
-                        .eq('user_id', user.id);
-                    break;
-                case 'planner':
-                    updateResult = await supabase
-                        .from('planner_profiles')
-                        .update(profileData)
-                        .eq('user_id', user.id);
-                    break;
-                default:
-                    throw new Error('Invalid user role');
-            }
-
-            if (updateResult.error) throw updateResult.error;
-            return { data: updateResult.data, error: null };
+            if (error) throw error;
+            return { data, error: null };
         } catch (error) {
             return { data: null, error };
+        }
+    },
+
+    // Sign in
+    async signIn(email, password) {
+        try {
+            const { data, error } = await supabase.auth.signInWithPassword({
+                email,
+                password
+            });
+            if (error) throw error;
+            return { data, error: null };
+        } catch (error) {
+            return { data: null, error };
+        }
+    },
+
+    // Sign out
+    async signOut() {
+        try {
+            const { error } = await supabase.auth.signOut();
+            if (error) throw error;
+            return { error: null };
+        } catch (error) {
+            return { error };
+        }
+    },
+
+    // Password reset
+    async resetPassword(email) {
+        try {
+            const { error } = await supabase.auth.resetPasswordForEmail(email);
+            if (error) throw error;
+            return { error: null };
+        } catch (error) {
+            return { error };
         }
     }
 };

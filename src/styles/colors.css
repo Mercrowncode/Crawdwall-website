@@ -1,0 +1,40 @@
+
+:root {
+    /* Primary Colors */
+    --primary-color: #E87722;
+    --primary-gradient: linear-gradient(135deg, #E87722, #ff9f4a);
+
+    /* Secondary Colors */
+    --secondary-color: #2D3748;
+
+    /* Background Colors */
+    --white: #FFFFFF;
+    --gray-light: #F7FAFC;
+    --background-dark: #1A202C;
+
+    /* Text Colors */
+    --text-primary: #2D3748;
+    --text-secondary: #4A5568;
+    --text-light: #A0AEC0;
+    --text-white: #FFFFFF;
+
+    /* UI Element Colors */
+    --border-color: #E2E8F0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --success-color: #48BB78;
+
+    /* Social Media Colors */
+    --google-color: #DB4437;
+    --facebook-color: #4267B2;
+    --apple-color: #000000;
+    --linkedin-color: #0077B5;
+
+    /* State Colors */
+    --hover-primary: #D35F00;
+    --hover-light: #EDF2F7;
+    --active-color: #E87722;
+
+    /* Overlay Colors */
+    --overlay-dark: rgba(0, 0, 0, 0.5);
+    --overlay-light: rgba(255, 255, 255, 0.9);
+}
